@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "IpahTVs/2KpqErKMTiOlYOWx33gA9m62l5KeuHtwUy60gEEhOeRyIfFpek7//9KIUbtkse7jzc0IhalNCspO3g==",
+  "success": true,
+  "projectFilePath": "D:\\github\\1\\microc-master\\machine.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\主人大帅比\\.nuget\\packages\\microsoft.netcore.app.host.win-x86\\5.0.15\\microsoft.netcore.app.host.win-x86.5.0.15.nupkg.sha512"
+  ],
+  "logs": []
+}
