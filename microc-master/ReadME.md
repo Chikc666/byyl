@@ -1,4 +1,28 @@
-﻿## 文件说明
+﻿[2020-2021学年第2学期]
+
+# [**实 验 报 告**]
+
+![zucc](ReadME.assets/zucc.png)
+
+- 课程名称:编程语言原理与编译
+- 实验项目:期末大作业
+- 专业班级__计算机1904
+- 学生学号31901105 31901106_
+- 学生姓名 池凯畅 丁枭波
+- 实验指导教师:张芸
+
+| 姓名   | 学号     | 班级       | 任务                                                         | 权重 |
+| ------ | -------- | ---------- | ------------------------------------------------------------ | ---- |
+| 池凯畅 | 31901105 | 计算机1904 | 解释器（主要）、编译器（一部分）、Java虚拟机（修改）、测试、文档 | 0.95 |
+| 丁枭波 | 31901106 | 计算机1904 | 编译器（主要）、测试、文档、注释                             | 0.95 |
+
+![image-20220605203331945](ReadME.assets/image-20220605203331945.png)
+
+
+
+
+
+## 项目说明
 
 ### interpreter  解释器
 
@@ -38,14 +62,14 @@ Contcomp.fs compile micro-C backwards                   优化编译器
 microcc.fsproj                                          优化编译器项目文件
 ```
 
-## 构建与执行
+## 构建
 
 ### A 解释器
 
-#### A.1  解释器 interpc.exe 构建
+####  构建 解释器 
 
 ```sh
-# 编译解释器 interpc.exe 命令行程序 
+# 编译解释器 interpc.exe 构建 
 dotnet restore  interpc.fsproj   # 可选
 dotnet clean  interpc.fsproj     # 可选
 dotnet build -v n interpc.fsproj # 构建./bin/Debug/net5.0/interpc.exe ，-v n查看详细生成过程
@@ -60,7 +84,7 @@ dotnet run --project interpc.fsproj -g example\ex1.c 8  //显示token AST 等调
 dotnet build -t:ccrun interpc.fsproj
 ```
 
-#### A.2 dotnet命令行fsi中运行解释器
+#### 运行解释器
 
 ```sh
 # 生成扫描器
@@ -92,7 +116,7 @@ run (fromFile "example\ex11.c") [8];; //解释执行 ex11.
 
 ### B 编译器
 
-#### B.1 microc编译器构建步骤
+#### 构建microc编译器
 
 ```sh
 # 构建 microc.exe 编译器程序 
@@ -111,7 +135,7 @@ dotnet run --project microc.fsproj -g example/ex1.c 8  # -g 查看调试信息
 
 #### B.2 dotnet fsi 中运行编译器
 
-```sh
+​```sh
 # 启动fsi
 dotnet fsi
 
@@ -136,7 +160,7 @@ compileToFile (fromFile "example\ex4.c") "ex4";; # 观察变量在环境上的�
 
 ### C 优化编译器
 
-#### C.1  优化编译器 microcc.exe 构建步骤
+#### C.1   构建优化编译器 microcc.exe
 
 ```sh
 
@@ -248,27 +272,3 @@ gcc -g -o example/ex1.exe driver.o example/ex1.o
 dotnet  build -t:ccrunx86 microc.fsproj
 
 ```
-
-#### 调用约定
-
-- caller
-  - 调用函数前，在栈上放置函数参数，个数为m
-  - 将rbp入栈，调用函数
-- callee
-  - 保存返回地址r，老的栈帧指针bp
-  - 将参数搬移到本函数的栈帧初始位置
-  - 将rbp设置到第一个参数的位置
-  - rbx 保存函数的返回值
-
-#### 数据在栈上的保存方式
-
-- 如数组 a[2] 的元素按次序排在栈上，末尾保存数组变量a，内容是首元素 e0的地址
-- e0, e1, a  
-
-访问数组，先通过`BP`得到`a`的位置，然后通过`a` 得到首地址 e0，最后计算数组下标偏移地址，访问对应数组元素
-
-- 全局变量在栈上依次保存，x86 汇编中，glovar 是全局变量的起始地址
-
-#### x86 bugs
-
-- *(p + 2) 指针运算不支持
