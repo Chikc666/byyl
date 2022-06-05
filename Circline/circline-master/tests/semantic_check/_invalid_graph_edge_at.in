@@ -1,4 +1,0 @@
-node a = node("1");
-node b = node("1");
-graph g = a -- b;
-g@(a,1);

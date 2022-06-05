@@ -1,5 +1,0 @@
-int print() {
-    return 1;
-}
-
-print();

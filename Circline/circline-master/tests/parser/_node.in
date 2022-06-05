@@ -1,4 +1,0 @@
-node(1);
-node("a");
-node(false);
-node([1,"2"]);
