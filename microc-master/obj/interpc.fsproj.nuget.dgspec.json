@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\github\\1\\microc-master\\interpc.fsproj": {}
+    "D:\\github\\byyl\\microc-master\\interpc.fsproj": {}
   },
   "projects": {
-    "D:\\github\\1\\microc-master\\interpc.fsproj": {
+    "D:\\github\\byyl\\microc-master\\interpc.fsproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\github\\1\\microc-master\\interpc.fsproj",
+        "projectUniqueName": "D:\\github\\byyl\\microc-master\\interpc.fsproj",
         "projectName": "interpc",
-        "projectPath": "D:\\github\\1\\microc-master\\interpc.fsproj",
+        "projectPath": "D:\\github\\byyl\\microc-master\\interpc.fsproj",
         "packagesPath": "C:\\Users\\主人大帅比\\.nuget\\packages\\",
-        "outputPath": "D:\\github\\1\\microc-master\\obj\\",
+        "outputPath": "D:\\github\\byyl\\microc-master\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\主人大帅比\\AppData\\Roaming\\NuGet\\NuGet.Config"

@@ -1,9 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "IpahTVs/2KpqErKMTiOlYOWx33gA9m62l5KeuHtwUy60gEEhOeRyIfFpek7//9KIUbtkse7jzc0IhalNCspO3g==",
+  "dgSpecHash": "ZApfxY2qnnR9yan00I9PjKZNtP76hgA0qu5OASd2p24yp7hXCURgjS/mG4VvVrwbE+bEjlDwDAtO4Pdjc6Q6lw==",
   "success": true,
-  "projectFilePath": "D:\\github\\1\\microc-master\\machine.csproj",
+  "projectFilePath": "D:\\github\\byyl\\microc-master\\microc.fsproj",
   "expectedPackageFiles": [
+    "C:\\Users\\主人大帅比\\.nuget\\packages\\fsharp.core\\6.0.2\\fsharp.core.6.0.2.nupkg.sha512",
+    "C:\\Users\\主人大帅比\\.nuget\\packages\\fslexyacc\\10.2.0\\fslexyacc.10.2.0.nupkg.sha512",
+    "C:\\Users\\主人大帅比\\.nuget\\packages\\fslexyacc.runtime\\10.2.0\\fslexyacc.runtime.10.2.0.nupkg.sha512",
     "C:\\Users\\主人大帅比\\.nuget\\packages\\microsoft.netcore.app.host.win-x86\\5.0.15\\microsoft.netcore.app.host.win-x86.5.0.15.nupkg.sha512"
   ],
   "logs": []

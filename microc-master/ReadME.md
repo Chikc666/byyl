@@ -14,7 +14,7 @@
 | 姓名   | 学号     | 班级       | 任务                                                         | 权重 |
 | ------ | -------- | ---------- | ------------------------------------------------------------ | ---- |
 | 池凯畅 | 31901105 | 计算机1904 | 解释器（主要）、编译器（一部分）、Java虚拟机（修改）、测试、文档 | 0.95 |
-| 丁枭波 | 31901106 | 计算机1904 | 编译器（主要）、测试、文档、注释                             | 0.95 |
+| 丁枭波 | 31901106 | 计算机1904 | 编译器（主要）、解释器（一部分)、Java虚拟机（修改）测试、文档、注释 | 0.95 |
 
 ![image-20220605203331945](ReadME.assets/image-20220605203331945.png)
 
@@ -79,10 +79,13 @@ dotnet build -v n interpc.fsproj # 构建./bin/Debug/net5.0/interpc.exe ，-v n�
 dotnet run --project interpc.fsproj example\ex1.c 8
 dotnet run --project interpc.fsproj -g example\ex1.c 8  //显示token AST 等调试信息
 
-# # one-liner 
-# 自行修改 interpc.fsproj  依次解释多个源文件
-dotnet build -t:ccrun interpc.fsproj
 ```
+
+![image-20220605205754182](ReadME.assets/image-20220605205754182.png)
+
+
+
+![image-20220605205812728](ReadME.assets/image-20220605205812728.png)
 
 #### 运行解释器
 
@@ -111,6 +114,18 @@ run (fromFile "example\ex11.c") [8];; //解释执行 ex11.
 #q;;
 
 ```
+
+
+
+
+
+![image-20220605205724522](ReadME.assets/image-20220605205724522.png)
+
+
+
+![image-20220605205906154](ReadME.assets/image-20220605205906154.png)
+
+![image-20220605210021553](ReadME.assets/image-20220605210021553.png)
 
 解释器的主入口 是 interp.fs 中的 run 函数，具体看代码的注释
 
@@ -158,6 +173,14 @@ compileToFile (fromFile "example\ex4.c") "ex4";; # 观察变量在环境上的�
 # 参考A. 中的命令 比较下解释执行解释执行 与 编译执行 ex11.c 的速度
 ```
 
+
+
+
+
+
+
+
+
 ### C 优化编译器
 
 #### C.1   构建优化编译器 microcc.exe
@@ -173,6 +196,12 @@ dotnet run --project microcc.fsproj example/ex11.c    # 执行编译器
 
 ```
 
+
+
+![image-20220605210158301](ReadME.assets/image-20220605210158301.png)
+
+![image-20220605210144323](ReadME.assets/image-20220605210144323.png)
+
 #### C.2 dotnet fsi 中运行 backwards编译器  
 
 ```sh
@@ -182,6 +211,10 @@ open ParseAndContcomp;;
 contCompileToFile (fromFile "example\ex11.c") "ex11.out";;
 #q;;
 ```
+
+![image-20220605210328333](ReadME.assets/image-20220605210328333.png)
+
+
 
 ### D 虚拟机构建与运行
 
@@ -199,18 +232,20 @@ dotnet run --project machine.csproj example/ex9.out 3 # 运行虚拟机，执行
 ./bin/Debug/net5.0/machine.exe -t example/ex9.out 3  // 运行虚拟机，执行 ex9.out ，-t 查看跟踪信息
 ```
 
+![image-20220605210728967](ReadME.assets/image-20220605210728967.png)
+
+
+
 #### D.2 C
 
 ```sh
-# 编译 c 虚拟机
-gcc -o machine.exe machine.c
 
 # 虚拟机执行指令
-machine.exe ex9.out 3
+machine.exe example/ex9.out 3
 
 # 调试执行指令
-machine.exe -trace ex9.out 0  # -trace  并查看跟踪信息
-machine.exe -trace ex9.out 3
+machine.exe -trace example/ex9.out 0  # -trace  并查看跟踪信息
+machine.exe -trace example/ex9.out 3
 
 ```
 
@@ -218,14 +253,18 @@ machine.exe -trace ex9.out 3
 
 ```sh
 javac Machine.java
-java Machine ex9.out 3
+java Machine example/ex9.out 3
 
-javac Machinetrace.java
-java Machinetrace ex9.out 0
-java Machinetrace ex9.out 3
+
+java Machinetrace example/ex9.out 0
+java Machinetrace example/ex9.out 3
 ```
 
 #### E 编译到x86_64
+
+
+
+
 
 #### 预备软件
 
@@ -250,7 +289,7 @@ https://github.com/jmeubank/tdm-gcc/releases/download/v9.2.0-tdm-1/tdm-gcc-9.2.0
 ```sh
 
 # 生成 ex1.asm 汇编码 nasm 格式
-dotnet run -p microc.fsproj example/ex1.c
+dotnet run --project microc.fsproj example/ex1.c
 # 汇编生成目标文件
 nasm -f win64 example/ex1.asm -o example/ex1.o   # win
 # nasm -f elf64 ex1.asm -o ex1.o   # linux  

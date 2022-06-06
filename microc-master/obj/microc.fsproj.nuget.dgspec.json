@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\github\\1\\microc-master\\microc.fsproj": {}
+    "D:\\github\\byyl\\microc-master\\microc.fsproj": {}
   },
   "projects": {
-    "D:\\github\\1\\microc-master\\microc.fsproj": {
+    "D:\\github\\byyl\\microc-master\\microc.fsproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\github\\1\\microc-master\\microc.fsproj",
+        "projectUniqueName": "D:\\github\\byyl\\microc-master\\microc.fsproj",
         "projectName": "microc",
-        "projectPath": "D:\\github\\1\\microc-master\\microc.fsproj",
+        "projectPath": "D:\\github\\byyl\\microc-master\\microc.fsproj",
         "packagesPath": "C:\\Users\\主人大帅比\\.nuget\\packages\\",
-        "outputPath": "D:\\github\\1\\microc-master\\obj\\",
+        "outputPath": "D:\\github\\byyl\\microc-master\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\主人大帅比\\AppData\\Roaming\\NuGet\\NuGet.Config"
